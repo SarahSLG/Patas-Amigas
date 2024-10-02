@@ -23,7 +23,6 @@ O projeto é feito com Java 19 e executado totalmente em terminal. Será integra
 
 - [ ] Configuração inicial do sistema no terminal
 - [ ] Criação de menus no terminal para cadastro de PESSOAS (tutores, adotantes e funcionários)
-- [ ] As pessoas podem ser ao mesmo tempo adotantes, tutores(doadores) e/ou funcionarios
 - [ ] Geração de relatórios simples no terminal (ex: listagem de usuários cadastrados)
 - [ ] Adição de novos itens (animais, pessoas) através de menus no terminal.
 - [ ] Listagem de itens em formato de tabela no terminal.
