@@ -33,5 +33,4 @@ O projeto é feito com Java 19 e executado totalmente em terminal. Será integra
 - [ ] Implementação de soft delete para desativação de usuários.
 - [ ] Implementação de filtros mais detalhados para listar animais por características (espécie, idade,
 status de adoção).
-- [ ] Documentação explicando a interação com o sistema via terminal, casos de uso e detalhes
-técnicos.
+- [ ] Documentação explicando a interação com o sistema via terminal, casos de uso e detalhes técnicos.
