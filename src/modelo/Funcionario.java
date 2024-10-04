@@ -3,7 +3,7 @@ package modelo;
 import java.util.Date;
 
 
-public class Funcionario {
+public class Funcionario extends Pessoa {
     private int idFuncionario;
     private Date contratacao;
     private String cargo;

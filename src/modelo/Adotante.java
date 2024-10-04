@@ -1,6 +1,6 @@
 package modelo;
 
-public class Adotante {
+public class Adotante extends Pessoa {
     private int idAdotante;
     private String preferencia;
     private String historicoAdocoes;
