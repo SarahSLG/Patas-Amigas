@@ -2,7 +2,6 @@ package modelo;
 
 import java.util.Date;
 
-
 public class Funcionario extends Pessoa {
     private int idFuncionario;
     private Date contratacao;
@@ -21,6 +20,16 @@ public class Funcionario extends Pessoa {
         this.departamento = departamento;
     }
 
+    public Funcionario(String nome, Date dataNascimento, String genero, String cpf, String endereco, String telefone,
+            String email, String senha, String hash, int idFuncionario, Date contratacao, String cargo, float salario,
+            String departamento) {
+        super(nome, dataNascimento, genero, cpf, endereco, telefone, email, senha, hash);
+        this.idFuncionario = idFuncionario;
+        this.contratacao = contratacao;
+        this.cargo = cargo;
+        this.salario = salario;
+        this.departamento = departamento;
+    }
 
     @Override
     public String toString() {

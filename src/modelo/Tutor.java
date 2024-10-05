@@ -1,13 +1,24 @@
 package modelo;
 
+import java.util.Date;
+
 public class Tutor extends Pessoa {
     private int idTutor;
     private int animaisCustodia;
     private String historico;
     private String status;
 
+    public Tutor() {
+    }
 
-    public Tutor(){
+    public Tutor(String nome, Date dataNascimento, String genero, String cpf, String endereco, String telefone,
+            String email, String senha, String hash, int idTutor, int animaisCustodia, String historico,
+            String status) {
+        super(nome, dataNascimento, genero, cpf, endereco, telefone, email, senha, hash);
+        this.idTutor = idTutor;
+        this.animaisCustodia = animaisCustodia;
+        this.historico = historico;
+        this.status = status;
     }
 
     public Tutor(int idTutor, int animaisCustodia, String historico, String status) {

@@ -1,5 +1,7 @@
 package modelo;
 
+import java.util.Date;
+
 public class Adotante extends Pessoa {
     private int idAdotante;
     private String preferencia;
@@ -7,6 +9,16 @@ public class Adotante extends Pessoa {
     private String status;
 
     public Adotante() {
+    }
+
+    public Adotante(String nome, Date dataNascimento, String genero, String cpf, String endereco, String telefone,
+            String email, String senha, String hash, int idAdotante, String preferencia, String historicoAdocoes,
+            String status) {
+        super(nome, dataNascimento, genero, cpf, endereco, telefone, email, senha, hash);
+        this.idAdotante = idAdotante;
+        this.preferencia = preferencia;
+        this.historicoAdocoes = historicoAdocoes;
+        this.status = status;
     }
 
     public Adotante(int idAdotante, String preferencia, String historicoAdocoes, String status) {
