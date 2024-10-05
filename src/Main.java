@@ -5,6 +5,7 @@ import java.util.function.Supplier;
 
 import modelo.Adotante;
 import modelo.Funcionario;
+import modelo.Pessoa;
 import modelo.Tutor;
 import view.FormularioCriarObjeto;
 import view.Menu;
@@ -14,27 +15,25 @@ public class Main {
         Scanner teclado = new Scanner(System.in);
 
         Menu menu = new Menu(teclado);
-        List<Funcionario> funcionarios = new LinkedList<>();
-        List<Adotante> adotantes = new LinkedList<>();
-        List<Tutor> tutores = new LinkedList<>();
+        List<Pessoa> usuarios = new LinkedList<>();
 
         Supplier<Object> criarFuncionario = () -> {
             Funcionario funcionario = FormularioCriarObjeto.criarObjeto(teclado, Funcionario.class);
-            funcionarios.add(funcionario);
+            usuarios.add(funcionario);
 
             return funcionario;
         };
 
         Supplier<Object> criarAdotante = () -> {
             Adotante adotante = FormularioCriarObjeto.criarObjeto(teclado, Adotante.class);
-            adotantes.add(adotante);
+            usuarios.add(adotante);
 
             return adotante;
         };
 
         Supplier<Object> criarTutor = () -> {
             Tutor tutor = FormularioCriarObjeto.criarObjeto(teclado, Tutor.class);
-            tutores.add(tutor);
+            usuarios.add(tutor);
 
             return tutor;
         };
@@ -42,15 +41,7 @@ public class Main {
         Supplier<Object> listarPessoas = () -> {
             // Exibir todos os usuários por method reference
             System.out.println("\tTODOS OS USUÁRIOS CADASTRADOS\t");
-            
-            System.out.println("\t\t FUNCIONÁRIOS");
-            funcionarios.forEach(System.out::println);
-
-            System.out.println("\t\t ADOTANTES");
-            adotantes.forEach(System.out::println);
-            
-            System.out.println("\t\t TUTORES");
-            tutores.forEach(System.out::println);
+            usuarios.forEach(System.out::println);
 
             return null;
         };
