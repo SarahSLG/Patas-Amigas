@@ -12,6 +12,7 @@ public class Tutor extends Pessoa {
     private String status;
 
     public Tutor() {
+        setPodeDoar(true);
     }
 
     public Tutor(String nome, LocalDate dataNascimento, String genero, String cpf, String endereco, String telefone,
@@ -22,6 +23,8 @@ public class Tutor extends Pessoa {
         this.animaisCustodia = animaisCustodia;
         this.historico = historico;
         this.status = status;
+
+        setPodeDoar(true);
     }
 
     public Tutor(int idTutor, int animaisCustodia, String historico, String status) {
@@ -29,6 +32,8 @@ public class Tutor extends Pessoa {
         this.animaisCustodia = animaisCustodia;
         this.historico = historico;
         this.status = status;
+
+        setPodeDoar(true);
     }
 
     @Override

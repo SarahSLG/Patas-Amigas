@@ -12,6 +12,7 @@ public class Adotante extends Pessoa {
     private String status;
 
     public Adotante() {
+        setFuncionario(true);
     }
 
     public Adotante(String nome, LocalDate dataNascimento, String genero, String cpf, String endereco, String telefone,
@@ -22,6 +23,8 @@ public class Adotante extends Pessoa {
         this.preferencia = preferencia;
         this.historicoAdocoes = historicoAdocoes;
         this.status = status;
+
+        setFuncionario(true);
     }
 
     public Adotante(int idAdotante, String preferencia, String historicoAdocoes, String status) {
@@ -29,6 +32,8 @@ public class Adotante extends Pessoa {
         this.preferencia = preferencia;
         this.historicoAdocoes = historicoAdocoes;
         this.status = status;
+
+        setFuncionario(true);
     }
 
     public void setIdAdotante(int idAdotante) {

@@ -14,6 +14,7 @@ public class Funcionario extends Pessoa {
     private String departamento;
 
     public Funcionario() {
+        setFuncionario(true);
     }
 
     public Funcionario(int idFuncionario, Date contratacao, String cargo, float salario, String departamento) {
@@ -22,6 +23,8 @@ public class Funcionario extends Pessoa {
         this.cargo = cargo;
         this.salario = salario;
         this.departamento = departamento;
+
+        setFuncionario(true);
     }
 
     public Funcionario(String nome, LocalDate dataNascimento, String genero, String cpf, String endereco, String telefone,
@@ -33,6 +36,8 @@ public class Funcionario extends Pessoa {
         this.cargo = cargo;
         this.salario = salario;
         this.departamento = departamento;
+
+        setFuncionario(true);
     }
 
     @Override

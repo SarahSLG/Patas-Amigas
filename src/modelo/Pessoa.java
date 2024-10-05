@@ -17,6 +17,10 @@ public class Pessoa {
     private String senha;
     private String hash;
 
+    private boolean podeAdotar;
+    private boolean podeDoar;
+    private boolean funcionario;
+
     public Pessoa() {
     }
 
@@ -129,5 +133,29 @@ public class Pessoa {
 
     public String getHash() {
         return hash;
+    }
+
+    public void setPodeAdotar(boolean podeAdotar) {
+        this.podeAdotar = podeAdotar;
+    }
+
+    public boolean podeAdotar() {
+        return podeAdotar;
+    }
+
+    public boolean podeDoar() {
+        return podeDoar;
+    }
+
+    public void setPodeDoar(boolean podeDoar) {
+        this.podeDoar = podeDoar;
+    }
+
+    public boolean isFuncionario() {
+        return funcionario;
+    }
+
+    public void setFuncionario(boolean funcionario) {
+        this.funcionario = funcionario;
     }
 }
