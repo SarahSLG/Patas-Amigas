@@ -36,6 +36,18 @@ public class Pessoa {
         this.hash = hash;
     }
 
+    /**
+     * Adota um animal passado como argumento. Este animal irá possuir uma referência ao adotante que realizou a chamada da função.
+     * 
+     * @param animal O animal a ser adotado
+     */
+    public void adotar(Animal animal) {
+        if (!podeAdotar) {
+            throw new RuntimeException("Este usuário não pode adotar!");
+        }
+        animal.setAdotante(this);
+    }
+
     @Override
     public String toString() {
         return "modelo.Pessoa{" +
