@@ -12,10 +12,20 @@ import java.util.function.Supplier;
  * @author Fernando Freitas
  */
 public class Menu {
+    /**
+     * Será utilizado para operações de obter o id de uma opção. Esse id será utilizado para obter o número de chamada dela.
+     */
     private static Integer idBase = 1;
 
+    /**
+     * Um hashmap foi escolhido a fim de que possa ser armazenado o nome (ou descrição) da opção e sua ação a ser executada (função Supplier)
+     * A função supplier foi escolhida a fim de que a função não necessite de nenhum argumento mas possa retornar algum valor. 
+     */
     private HashMap<Supplier<Object>, String> opcoes = new HashMap<>();
 
+    /**
+     * O scanner será um campo da classe para que seja utilizado em vários métodos.
+     */
     private Scanner scanner;
 
     /**
@@ -36,6 +46,7 @@ public class Menu {
      * @param descricao A descrição da opção para ser exibida
      */
     public void adicionarOpcao(Supplier<Object> opcao, String descricao) {
+        // Adiciona o objeto Supplier e sua descrição na lista de interna de opções
         this.opcoes.put(opcao, descricao);
     }
 
@@ -45,12 +56,15 @@ public class Menu {
     public void exibir() {
         String resposta = "";
 
+        // O loop será executado repetidamente
         while (true) {
             exibirOpcoes();
+
             System.out.println("Digite \"sair\" para Sair.");
 
             resposta = obterResposta();
 
+            // Se o usuário digitar 'sair', para a execução
             boolean saidaRequisitada = resposta.equalsIgnoreCase("sair");
 
             if (saidaRequisitada) {
@@ -62,7 +76,9 @@ public class Menu {
     }
 
     private void exibirOpcoes() {
+        // Reinicia o idBase para ser utilizado para definir o número de cada opção
         idBase = 1;
+
         opcoes.forEach((opcao, descricao) -> {
             System.out.printf("%d. %s\n", idBase, descricao);
             idBase += 1;
@@ -74,10 +90,14 @@ public class Menu {
     }
 
     private void calcularResposta(String resposta) {
+        // Reinicia o idBase para ser utilizado para obter o número da opção
         idBase = 1;
 
         opcoes.forEach((opcao, descricao) -> {
-            if (resposta.equals(idBase.toString())) {
+            boolean opcaoEscolhidaIgualAOpcaoLoop = resposta.equals(idBase.toString());
+
+            // Se a opção escolhida for a atual do loop, executa a função dela.
+            if (opcaoEscolhidaIgualAOpcaoLoop) {
                 opcao.get();
             }
 
@@ -85,6 +105,11 @@ public class Menu {
         });
     }
 
+    /**
+     * Obtém a lista de opções já adicionadas.
+     * 
+     * @return O Hashmap das opções
+     */
     public HashMap<Supplier<Object>, String> getOpcoes() {
         return opcoes;
     }

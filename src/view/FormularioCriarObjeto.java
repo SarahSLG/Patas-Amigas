@@ -20,21 +20,29 @@ public class FormularioCriarObjeto {
         try {
             obj = classe.getConstructor().newInstance();
 
+            // Para cada atributo da classe do objeto que será criado
             for (Field f : classe.getDeclaredFields()) {
                 // Torna o atributo acessível para alterar
                 f.setAccessible(true);
 
+                // Obtém o nome do atributo
                 String nomeAtributo = f.getName();
 
+                // Faz a pergunta do formulário
                 System.out.println("Digite o valor para " + nomeAtributo);
                 Object valor = scanner.nextLine();
 
-                if (valor.equals("")) {
+                boolean respostaVazia = valor.equals("");
+
+                // Uma resposta vazia indica um valor nulo, do contrário ele faz um 'casting'
+                // para que o tipo do atributo seja o mesmo do valor de entrada
+                if (respostaVazia) {
                     valor = null;
                 } else {
                     valor = f.getType().cast(valor);
                 }
 
+                // Define o valor do atributo do objeto
                 f.set(obj, valor);
             }
         } catch (Exception e) {
