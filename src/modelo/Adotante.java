@@ -36,6 +36,19 @@ public class Adotante extends Pessoa {
         setFuncionario(true);
     }
 
+    @Override
+    public String toString() {
+        return "Adotante [idAdotante=" + idAdotante + ", preferencia=" + preferencia + ", historicoAdocoes="
+                + historicoAdocoes + ", status=" + status + ", getClass()=" + getClass() + ", toString()="
+                + super.toString() + ", getIdAdotante()=" + getIdAdotante() + ", getPreferencia()=" + getPreferencia()
+                + ", getHistoricoAdocoes()=" + getHistoricoAdocoes() + ", getStatus()=" + getStatus() + ", getId()="
+                + getId() + ", hashCode()=" + hashCode() + ", getNome()=" + getNome() + ", getDataNascimento()="
+                + getDataNascimento() + ", getGenero()=" + getGenero() + ", getCpf()=" + getCpf() + ", getEndereco()="
+                + getEndereco() + ", getTelefone()=" + getTelefone() + ", getEmail()=" + getEmail() + ", getSenha()="
+                + getSenha() + ", getHash()=" + getHash() + ", podeAdotar()=" + podeAdotar() + ", podeDoar()="
+                + podeDoar() + ", isFuncionario()=" + isFuncionario() + "]";
+    }
+
     public void setIdAdotante(int idAdotante) {
         this.idAdotante = idAdotante;
     }

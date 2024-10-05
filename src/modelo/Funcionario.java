@@ -42,13 +42,16 @@ public class Funcionario extends Pessoa {
 
     @Override
     public String toString() {
-        return "Funcionario{" +
-                "idFuncionario=" + idFuncionario +
-                ", contratacao=" + contratacao +
-                ", cargo='" + cargo + '\'' +
-                ", salario=" + salario +
-                ", departamento='" + departamento + '\'' +
-                '}';
+        return "Funcionario [idFuncionario=" + idFuncionario + ", contratacao=" + contratacao + ", cargo=" + cargo
+                + ", salario=" + salario + ", departamento=" + departamento + ", getClass()=" + getClass()
+                + ", toString()=" + super.toString() + ", getIdFuncionario()=" + getIdFuncionario()
+                + ", getContratacao()=" + getContratacao() + ", getCargo()=" + getCargo() + ", getSalario()="
+                + getSalario() + ", getDepartamento()=" + getDepartamento() + ", getId()=" + getId() + ", hashCode()="
+                + hashCode() + ", getNome()=" + getNome() + ", getDataNascimento()=" + getDataNascimento()
+                + ", getGenero()=" + getGenero() + ", getCpf()=" + getCpf() + ", getEndereco()=" + getEndereco()
+                + ", getTelefone()=" + getTelefone() + ", getEmail()=" + getEmail() + ", getSenha()=" + getSenha()
+                + ", getHash()=" + getHash() + ", podeAdotar()=" + podeAdotar() + ", podeDoar()=" + podeDoar()
+                + ", isFuncionario()=" + isFuncionario() + "]";
     }
 
     public void setIdFuncionario(int idFuncionario) {

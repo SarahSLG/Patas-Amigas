@@ -38,12 +38,15 @@ public class Tutor extends Pessoa {
 
     @Override
     public String toString() {
-        return "Tutor{" +
-                "idTutor=" + idTutor +
-                ", animaisCustodia=" + animaisCustodia +
-                ", historico='" + historico + '\'' +
-                ", status='" + status + '\'' +
-                '}';
+        return "Tutor [idTutor=" + idTutor + ", animaisCustodia=" + animaisCustodia + ", historico=" + historico
+                + ", status=" + status + ", getIdTutor()=" + getIdTutor() + ", getClass()=" + getClass()
+                + ", getAnimaisCustodia()=" + getAnimaisCustodia() + ", toString()=" + super.toString()
+                + ", getHistorico()=" + getHistorico() + ", getStatus()=" + getStatus() + ", getId()=" + getId()
+                + ", hashCode()=" + hashCode() + ", getNome()=" + getNome() + ", getDataNascimento()="
+                + getDataNascimento() + ", getGenero()=" + getGenero() + ", getCpf()=" + getCpf() + ", getEndereco()="
+                + getEndereco() + ", getTelefone()=" + getTelefone() + ", getEmail()=" + getEmail() + ", getSenha()="
+                + getSenha() + ", getHash()=" + getHash() + ", podeAdotar()=" + podeAdotar() + ", podeDoar()="
+                + podeDoar() + ", isFuncionario()=" + isFuncionario() + "]";
     }
 
     public void setIdTutor(int idTutor) {
