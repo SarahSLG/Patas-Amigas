@@ -104,7 +104,10 @@ public class FormularioCriarObjeto {
      */
     private static <T> Object tentarObterNumeroDeValor(Class<T> classe, Object valor) {
         try {
-            if (valor != null && !valor.equals("") && Number.class.isAssignableFrom(classe)) {
+            boolean classeInstanciaDeNumero = Number.class.isAssignableFrom(classe);
+            boolean valorValido = valor != null && !valor.equals("");
+
+            if (valorValido && classeInstanciaDeNumero) {
                 valor = Integer.parseInt((String) valor);
             }
         } catch (NumberFormatException ignorar) {
