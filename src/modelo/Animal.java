@@ -15,8 +15,8 @@ public class Animal {
     private Date cadastro;
     private String statusAdocao;
 
-    private Tutor tutor;
-    private Adotante adotante;
+    private Pessoa tutor;
+    private Pessoa adotante;
 
     public Animal() {
     }
@@ -46,19 +46,19 @@ public class Animal {
                 '}';
     }
     
-    public Tutor getTutor() {
+    public Pessoa getTutor() {
         return tutor;
     }
 
-    public void setTutor(Tutor tutor) {
+    public void setTutor(Pessoa tutor) {
         this.tutor = tutor;
     }
 
-    public Adotante getAdotante() {
+    public Pessoa getAdotante() {
         return adotante;
     }
 
-    public void setAdotante(Adotante adotante) {
+    public void setAdotante(Pessoa adotante) {
         this.adotante = adotante;
     }
 
