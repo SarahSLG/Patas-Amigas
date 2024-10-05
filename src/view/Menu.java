@@ -2,7 +2,7 @@ package view;
 
 import java.util.HashMap;
 import java.util.Scanner;
-import java.util.function.Consumer;
+import java.util.function.Supplier;
 
 /**
  * Um menu é um objeto composto por uma lista de opções que será exibida no
@@ -14,7 +14,7 @@ import java.util.function.Consumer;
 public class Menu {
     private static Integer idBase = 1;
 
-    private HashMap<Consumer<String>, String> opcoes = new HashMap<>();
+    private HashMap<Supplier<Object>, String> opcoes = new HashMap<>();
 
     private Scanner scanner;
 
@@ -36,7 +36,7 @@ public class Menu {
      *                  {@code Consumer<String> [opcao] = () -> [codigo]}
      * @param descricao A descrição da opção para ser exibida
      */
-    public void adicionarOpcao(Consumer<String> opcao, String descricao) {
+    public void adicionarOpcao(Supplier<Object> opcao, String descricao) {
         this.opcoes.put(opcao, descricao);
     }
 
@@ -75,8 +75,7 @@ public class Menu {
 
         opcoes.forEach((opcao, descricao) -> {
             if (resposta.equals(idBase.toString())) {
-                System.out.println("Valor opcional: ");
-                opcao.accept(scanner.nextLine());
+                opcao.get();
             }
 
             idBase += 1;
