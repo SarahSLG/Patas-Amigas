@@ -1,6 +1,6 @@
 package modelo;
 
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.Objects;
 
 /**
@@ -8,7 +8,7 @@ import java.util.Objects;
  */
 public class Pessoa {
     private String nome;
-    private Date dataNascimento;
+    private LocalDate dataNascimento;
     private String genero;
     private String cpf;
     private String endereco;
@@ -20,7 +20,7 @@ public class Pessoa {
     public Pessoa() {
     }
 
-    public Pessoa(String nome, Date dataNascimento, String genero, String cpf, String endereco, String telefone, String email, String senha, String hash) {
+    public Pessoa(String nome, LocalDate dataNascimento, String genero, String cpf, String endereco, String telefone, String email, String senha, String hash) {
         this.nome = nome;
         this.dataNascimento = dataNascimento;
         this.genero = genero;
@@ -63,7 +63,7 @@ public class Pessoa {
         this.nome = nome;
     }
 
-    public void setDataNascimento(Date dataNascimento) {
+    public void setDataNascimento(LocalDate dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
 
@@ -99,7 +99,7 @@ public class Pessoa {
         return nome;
     }
 
-    public Date getDataNascimento() {
+    public LocalDate getDataNascimento() {
         return dataNascimento;
     }
 

@@ -1,5 +1,6 @@
 package modelo;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 /**
@@ -23,7 +24,7 @@ public class Funcionario extends Pessoa {
         this.departamento = departamento;
     }
 
-    public Funcionario(String nome, Date dataNascimento, String genero, String cpf, String endereco, String telefone,
+    public Funcionario(String nome, LocalDate dataNascimento, String genero, String cpf, String endereco, String telefone,
             String email, String senha, String hash, int idFuncionario, Date contratacao, String cargo, float salario,
             String departamento) {
         super(nome, dataNascimento, genero, cpf, endereco, telefone, email, senha, hash);

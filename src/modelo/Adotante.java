@@ -1,6 +1,6 @@
 package modelo;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 /**
  * @author Sarah Guimarães
@@ -14,7 +14,7 @@ public class Adotante extends Pessoa {
     public Adotante() {
     }
 
-    public Adotante(String nome, Date dataNascimento, String genero, String cpf, String endereco, String telefone,
+    public Adotante(String nome, LocalDate dataNascimento, String genero, String cpf, String endereco, String telefone,
             String email, String senha, String hash, int idAdotante, String preferencia, String historicoAdocoes,
             String status) {
         super(nome, dataNascimento, genero, cpf, endereco, telefone, email, senha, hash);

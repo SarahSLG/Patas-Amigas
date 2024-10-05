@@ -1,6 +1,6 @@
 package modelo;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 /**
  * @author Sarah Guimarães
@@ -14,7 +14,7 @@ public class Tutor extends Pessoa {
     public Tutor() {
     }
 
-    public Tutor(String nome, Date dataNascimento, String genero, String cpf, String endereco, String telefone,
+    public Tutor(String nome, LocalDate dataNascimento, String genero, String cpf, String endereco, String telefone,
             String email, String senha, String hash, int idTutor, int animaisCustodia, String historico,
             String status) {
         super(nome, dataNascimento, genero, cpf, endereco, telefone, email, senha, hash);
