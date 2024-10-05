@@ -46,9 +46,34 @@ public class Main {
             return null;
         };
 
+        Supplier<Object> permitirAdocao = () -> {
+            if (usuarios.size() == 0) {
+                System.out.println("Não há nenhum usuário cadastrado!");
+                return null;
+            }
+
+            System.out.println("Digite o id do usuário que será permitido a adotar: ");
+            int id = teclado.nextInt();
+
+            // Verifica se um usuário do sistema possui aquele id e obtém ele
+            List<Pessoa> listaUsuariosComId = usuarios.stream().filter(p -> p.getId() == id).toList();
+
+            if (listaUsuariosComId.size() == 0) {
+                System.out.println("Usuário não encontrado! Certifique-se de que o id foi digitado corretamente.");
+                return null;
+            }
+
+            Pessoa pessoa = listaUsuariosComId.get(0);
+
+            pessoa.setPodeAdotar(true);
+
+            return null;
+        };
+
         menu.adicionarOpcao(criarFuncionario, "Criar funcionário.");
         menu.adicionarOpcao(criarAdotante, "Criar adotante.");
         menu.adicionarOpcao(criarTutor, "Criar tutor.");
+        menu.adicionarOpcao(permitirAdocao, "Permitir Adoção.");
 
         menu.adicionarOpcao(listarPessoas, "Listar pessoas.");
 
