@@ -44,8 +44,6 @@ public class FormularioCriarObjeto {
                 // para que o tipo do atributo seja o mesmo do valor de entrada
                 if (respostaVazia) {
                     valor = null;
-                } else {
-                    // valor = f.getType().cast(valor);
                 }
 
                 valor = tentarObterNumeroDeValor(classe, valor);
