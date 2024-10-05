@@ -1,6 +1,9 @@
 package view;
 
 import java.util.Scanner;
+
+import util.ReflectionUtils;
+
 import java.lang.reflect.Field;
 import java.time.format.DateTimeFormatter;
 import java.time.LocalDate;
@@ -24,7 +27,7 @@ public class FormularioCriarObjeto {
             obj = classe.getConstructor().newInstance();
 
             // Para cada atributo da classe do objeto que será criado
-            for (Field f : classe.getDeclaredFields()) {
+            for (Field f : ReflectionUtils.getAllFields(classe)) {
                 // Torna o atributo acessível para alterar
                 f.setAccessible(true);
 
