@@ -77,4 +77,9 @@ public class Tutor extends Pessoa {
     public String getStatus() {
         return status;
     }
+
+    @Override
+    public int getId() {
+        return idTutor;
+    }
 }

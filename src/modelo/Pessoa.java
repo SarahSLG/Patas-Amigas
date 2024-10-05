@@ -6,7 +6,7 @@ import java.util.Objects;
 /**
  * @author Sarah Guimarães
  */
-public class Pessoa {
+public abstract class Pessoa {
     private String nome;
     private LocalDate dataNascimento;
     private String genero;
@@ -47,6 +47,13 @@ public class Pessoa {
         }
         animal.setAdotante(this);
     }
+
+    /**
+     * Cada subclasse de {@code Pessoa} deve conter um id próprio do objeto.
+     * 
+     * @return O id correspondente do usuário
+     */
+    public abstract int getId();
 
     @Override
     public String toString() {

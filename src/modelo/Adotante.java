@@ -67,4 +67,9 @@ public class Adotante extends Pessoa {
     public String getStatus() {
         return status;
     }
+
+    @Override
+    public int getId() {
+        return idAdotante;
+    }
 }
