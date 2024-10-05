@@ -48,33 +48,15 @@ public class FormularioCriarObjeto {
                     // valor = f.getType().cast(valor);
                 }
 
-                // Tenta identificar se o valor digitado for um número
-                // Se for, passa a entrada para o valor digitado
-                // Se não, ignora e segue normalmente
-                try {
-                    if (valor != null && !valor.equals("") && Number.class.isAssignableFrom(classe)) {
-                        valor = Integer.parseInt((String) valor);
-                    }
-                } catch (NumberFormatException ignorar) {
-                }
+                valor = tentarObterNumeroDeValor(classe, valor);
 
-                // Tenta identificar se é uma data
-                try {
-                    if (valor != null && !valor.equals("")) {
-                        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-
-                        LocalDate localDate = LocalDate.parse((String) valor, dtf);
-
-                        valor = localDate;
-                    }
-                } 
-                catch (ClassCastException ignorar) {} 
-                catch (DateTimeParseException ignorar) {}
+                valor = tentarObterDataDeValor(valor);
 
                 try {
                     // Define o valor do atributo do objeto
                     f.set(obj, valor);
                 } catch (IllegalArgumentException e) {
+                    // Caso o valor que foi assinalado a ele for inválido
                     System.err.println("Não é aceito esse tipo para esse atributo!");
                 }
             }
@@ -83,5 +65,49 @@ public class FormularioCriarObjeto {
         }
 
         return obj;
+    }
+
+    /**
+     * @param valor O valor
+     * @return O valor de tipo {@code DateTime} se o valor assinalado a ele for uma data no formato 'dd/MM/yyyy'
+     */
+    private static Object tentarObterDataDeValor(Object valor) {
+        // Tenta identificar se é uma data
+        try {
+            boolean valorValido = valor != null && !valor.equals("");
+
+            // Usa um formatador para obter a data na string, e retorna a data presente nela
+            if (valorValido) {
+                DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+
+                LocalDate localDate = LocalDate.parse((String) valor, dtf);
+
+                valor = localDate;
+            }
+        } 
+        catch (ClassCastException ignorar) {} 
+        catch (DateTimeParseException ignorar) {}
+
+        return valor;
+    }
+
+    /**
+     * Tenta identificar se o valor digitado for um número
+     *  Se for, passa a entrada para o valor digitado
+     *  Se não, ignora e segue normalmente
+     * 
+     * @param <T> O tipo da classe do objeto
+     * @param classe A classe do objeto
+     * @param valor O valor
+     * @return O valor de tipo número, se o valor assinalado a ele for um número
+     */
+    private static <T> Object tentarObterNumeroDeValor(Class<T> classe, Object valor) {
+        try {
+            if (valor != null && !valor.equals("") && Number.class.isAssignableFrom(classe)) {
+                valor = Integer.parseInt((String) valor);
+            }
+        } catch (NumberFormatException ignorar) {
+        }
+        return valor;
     }
 }
