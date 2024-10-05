@@ -42,8 +42,14 @@ public class Main {
         Supplier<Object> listarPessoas = () -> {
             // Exibir todos os usuários por method reference
             System.out.println("\tTODOS OS USUÁRIOS CADASTRADOS\t");
+            
+            System.out.println("\t\t FUNCIONÁRIOS");
             funcionarios.forEach(System.out::println);
+
+            System.out.println("\t\t ADOTANTES");
             adotantes.forEach(System.out::println);
+            
+            System.out.println("\t\t TUTORES");
             tutores.forEach(System.out::println);
 
             return null;
