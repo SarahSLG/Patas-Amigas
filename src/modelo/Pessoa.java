@@ -3,6 +3,9 @@ package modelo;
 import java.util.Date;
 import java.util.Objects;
 
+/**
+ * @author Sarah Guimarães
+ */
 public class Pessoa {
     private String nome;
     private Date dataNascimento;

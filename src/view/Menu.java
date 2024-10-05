@@ -31,7 +31,8 @@ public class Menu {
      * Adiciona uma opção na lista de opções no menu.
      * 
      * @param opcao     O objeto representado pela função. Ex:
-     *                  {@code Consumer<String> [opcao] = () -> [codigo]}
+     *                  {@code Consumer<String> [opcao] = () -> [codigo]}. A função
+     *                  deve ter um return no final, mesmo que retorne null.
      * @param descricao A descrição da opção para ser exibida
      */
     public void adicionarOpcao(Supplier<Object> opcao, String descricao) {

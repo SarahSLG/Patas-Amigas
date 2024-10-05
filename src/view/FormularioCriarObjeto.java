@@ -5,11 +5,13 @@ import java.lang.reflect.Field;
 
 public class FormularioCriarObjeto {
     /**
-     * Inicia uma série de procedimentos para criar um objeto de uma classe {@code T}
+     * Inicia uma série de procedimentos para criar um objeto de uma classe
+     * {@code T}. Obtém os atributos da classe do objeto e cria um formulário no
+     * terminal para que o usuário preencha todas as informações.
      * 
-     * @param <T> O Tipo do objeto a ser criado
+     * @param <T>     O Tipo do objeto a ser criado
      * @param scanner O objeto scanner a receber a entrada do usuário
-     * @param classe A classe do objeto a ser criado
+     * @param classe  A classe do objeto a ser criado
      * @return O Objeto
      */
     public static <T> T criarObjeto(Scanner scanner, Class<T> classe) {

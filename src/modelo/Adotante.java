@@ -2,6 +2,9 @@ package modelo;
 
 import java.util.Date;
 
+/**
+ * @author Sarah Guimarães
+ */
 public class Adotante extends Pessoa {
     private int idAdotante;
     private String preferencia;

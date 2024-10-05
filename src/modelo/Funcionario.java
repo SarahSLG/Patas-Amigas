@@ -2,6 +2,9 @@ package modelo;
 
 import java.util.Date;
 
+/**
+ * @author Sarah Guimarães
+ */
 public class Funcionario extends Pessoa {
     private int idFuncionario;
     private Date contratacao;

@@ -2,6 +2,9 @@ package modelo;
 
 import java.util.Date;
 
+/**
+ * @author Sarah Guimarães
+ */
 public class Animal {
     private String nome;
     private String especie;
