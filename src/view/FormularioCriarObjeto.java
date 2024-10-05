@@ -69,7 +69,8 @@ public class FormularioCriarObjeto {
 
     /**
      * @param valor O valor
-     * @return O valor de tipo {@code DateTime} se o valor assinalado a ele for uma data no formato 'dd/MM/yyyy'
+     * @return O valor de tipo {@code DateTime} se o valor assinalado a ele for uma
+     *         data no formato 'dd/MM/yyyy'
      */
     private static Object tentarObterDataDeValor(Object valor) {
         // Tenta identificar se é uma data
@@ -84,21 +85,21 @@ public class FormularioCriarObjeto {
 
                 valor = localDate;
             }
-        } 
-        catch (ClassCastException ignorar) {} 
-        catch (DateTimeParseException ignorar) {}
+        } catch (ClassCastException ignorar) {
+        } catch (DateTimeParseException ignorar) {
+        }
 
         return valor;
     }
 
     /**
      * Tenta identificar se o valor digitado for um número
-     *  Se for, passa a entrada para o valor digitado
-     *  Se não, ignora e segue normalmente
+     * Se for, passa a entrada para o valor digitado
+     * Se não, ignora e segue normalmente
      * 
-     * @param <T> O tipo da classe do objeto
+     * @param <T>    O tipo da classe do objeto
      * @param classe A classe do objeto
-     * @param valor O valor
+     * @param valor  O valor
      * @return O valor de tipo número, se o valor assinalado a ele for um número
      */
     private static <T> Object tentarObterNumeroDeValor(Class<T> classe, Object valor) {
