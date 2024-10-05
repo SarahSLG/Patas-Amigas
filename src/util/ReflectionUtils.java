@@ -1,9 +1,9 @@
 package util;
 
 import java.lang.reflect.Field;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Stream;
 
 /**
  * Coleção de métodos úteis para uso da Reflection API
@@ -18,10 +18,15 @@ public class ReflectionUtils {
      * @param cls A classe
      * @return A lista de todos os atributos juntos
      */
-    public static <T> Field[] getAllFields(Class<T> cls) {
+    public static <T> List<Field> getAllFields(Class<T> cls) {
         List<Field> fieldsClass = Arrays.asList(cls.getDeclaredFields());
         List<Field> fieldsSuperClass = Arrays.asList(cls.getSuperclass().getDeclaredFields());
 
-        return (Field[]) Stream.concat(fieldsClass.stream(), fieldsSuperClass.stream()).toArray();
+        List<Field> joinedFields = new ArrayList<>();
+
+        joinedFields.addAll(fieldsSuperClass);
+        joinedFields.addAll(fieldsClass);
+
+        return joinedFields;
     }
 }
