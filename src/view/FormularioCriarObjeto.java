@@ -39,11 +39,28 @@ public class FormularioCriarObjeto {
                 if (respostaVazia) {
                     valor = null;
                 } else {
-                    valor = f.getType().cast(valor);
+                    // valor = f.getType().cast(valor);
                 }
 
-                // Define o valor do atributo do objeto
-                f.set(obj, valor);
+                Integer valorNumero = null;
+
+                // Tenta identificar se o valor digitado for um número
+                // Se for, passa a entrada para o valor digitado
+                // Se não, ignora e segue normalmente
+                try {
+                    if (valor != null) valorNumero = Integer.parseInt((String) valor);
+                } catch (NumberFormatException ignorar) {}
+
+                if (valorNumero != null) {
+                    valor = valorNumero;
+                }
+
+                try {
+                    // Define o valor do atributo do objeto
+                    f.set(obj, valor);
+                } catch (IllegalArgumentException e) {
+                    System.err.println("Não é aceito esse tipo para esse atributo!");
+                }
             }
         } catch (Exception e) {
             e.printStackTrace();
