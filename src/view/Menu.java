@@ -44,13 +44,17 @@ public class Menu {
     public void exibir() {
         String resposta = "";
 
-        boolean continuarExibindo = !resposta.equalsIgnoreCase("Sair");
-
-        while (continuarExibindo) {
+        while (true) {
             exibirOpcoes();
             System.out.println("Digite \"sair\" para Sair.");
 
             resposta = obterResposta();
+
+            boolean saidaRequisitada = resposta.equalsIgnoreCase("sair");
+
+            if (saidaRequisitada) {
+                break;
+            }
 
             calcularResposta(resposta);
         }
