@@ -18,8 +18,6 @@ public class Menu {
 
     private Scanner scanner;
 
-    private boolean continuarExibindo;
-
     /**
      * Instancia um objeto Menu novo, à partir de um scanner de entrada
      * 
@@ -46,7 +44,7 @@ public class Menu {
     public void exibir() {
         String resposta = "";
 
-        continuarExibindo = !resposta.equalsIgnoreCase("Sair");
+        boolean continuarExibindo = !resposta.equalsIgnoreCase("Sair");
 
         while (continuarExibindo) {
             exibirOpcoes();
@@ -80,5 +78,9 @@ public class Menu {
 
             idBase += 1;
         });
+    }
+
+    public HashMap<Supplier<Object>, String> getOpcoes() {
+        return opcoes;
     }
 }
