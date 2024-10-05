@@ -15,6 +15,9 @@ public class Animal {
     private Date cadastro;
     private String statusAdocao;
 
+    private Tutor tutor;
+    private Adotante adotante;
+
     public Animal() {
     }
 
@@ -41,6 +44,22 @@ public class Animal {
                 ", cadastro=" + cadastro +
                 ", statusAdocao='" + statusAdocao + '\'' +
                 '}';
+    }
+    
+    public Tutor getTutor() {
+        return tutor;
+    }
+
+    public void setTutor(Tutor tutor) {
+        this.tutor = tutor;
+    }
+
+    public Adotante getAdotante() {
+        return adotante;
+    }
+
+    public void setAdotante(Adotante adotante) {
+        this.adotante = adotante;
     }
 
     public void setNome(String nome) {
