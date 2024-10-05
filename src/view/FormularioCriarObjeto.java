@@ -2,6 +2,11 @@ package view;
 
 import java.util.Scanner;
 import java.lang.reflect.Field;
+import java.time.format.DateTimeFormatter;
+import java.time.LocalDate;
+import java.time.format.DateTimeParseException;
+import java.util.Date;
+import java.time.ZoneId;
 
 public class FormularioCriarObjeto {
     /**
@@ -42,18 +47,28 @@ public class FormularioCriarObjeto {
                     // valor = f.getType().cast(valor);
                 }
 
-                Integer valorNumero = null;
-
                 // Tenta identificar se o valor digitado for um número
                 // Se for, passa a entrada para o valor digitado
                 // Se não, ignora e segue normalmente
                 try {
-                    if (valor != null) valorNumero = Integer.parseInt((String) valor);
-                } catch (NumberFormatException ignorar) {}
-
-                if (valorNumero != null) {
-                    valor = valorNumero;
+                    if (valor != null && !valor.equals("") && Number.class.isAssignableFrom(classe)) {
+                        valor = Integer.parseInt((String) valor);
+                    }
+                } catch (NumberFormatException ignorar) {
                 }
+
+                // Tenta identificar se é uma data
+                try {
+                    if (valor != null && !valor.equals("")) {
+                        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+
+                        LocalDate localDate = LocalDate.parse((String) valor, dtf);
+
+                        valor = localDate;
+                    }
+                } 
+                catch (ClassCastException ignorar) {} 
+                catch (DateTimeParseException ignorar) {}
 
                 try {
                     // Define o valor do atributo do objeto
