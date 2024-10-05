@@ -3,7 +3,7 @@ package view;
 import java.util.Scanner;
 import java.lang.reflect.Field;
 
-public class CriarObjeto {
+public class FormularioCriarObjeto {
     /**
      * Inicia uma série de procedimentos para criar um objeto de uma classe {@code T}
      * 
