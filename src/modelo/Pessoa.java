@@ -24,7 +24,8 @@ public abstract class Pessoa {
     public Pessoa() {
     }
 
-    public Pessoa(String nome, LocalDate dataNascimento, String genero, String cpf, String endereco, String telefone, String email, String senha, String hash) {
+    public Pessoa(String nome, LocalDate dataNascimento, String genero, String cpf, String endereco, String telefone,
+            String email, String senha, String hash) {
         this.nome = nome;
         this.dataNascimento = dataNascimento;
         this.genero = genero;
@@ -37,7 +38,8 @@ public abstract class Pessoa {
     }
 
     /**
-     * Adota um animal passado como argumento. Este animal irá possuir uma referência ao adotante que realizou a chamada da função.
+     * Adota um animal passado como argumento. Este animal irá possuir uma
+     * referência ao adotante que realizou a chamada da função.
      * 
      * @param animal O animal a ser adotado
      */
@@ -72,14 +74,22 @@ public abstract class Pessoa {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Pessoa pessoa)) return false;
-        return Objects.equals(getNome(), pessoa.getNome()) && Objects.equals(getDataNascimento(), pessoa.getDataNascimento()) && Objects.equals(getGenero(), pessoa.getGenero()) && Objects.equals(getCpf(), pessoa.getCpf()) && Objects.equals(getEndereco(), pessoa.getEndereco()) && Objects.equals(getTelefone(), pessoa.getTelefone()) && Objects.equals(getEmail(), pessoa.getEmail()) && Objects.equals(getSenha(), pessoa.getSenha()) && Objects.equals(getHash(), pessoa.getHash());
+        if (this == o)
+            return true;
+        if (!(o instanceof Pessoa pessoa))
+            return false;
+        return Objects.equals(getNome(), pessoa.getNome())
+                && Objects.equals(getDataNascimento(), pessoa.getDataNascimento())
+                && Objects.equals(getGenero(), pessoa.getGenero()) && Objects.equals(getCpf(), pessoa.getCpf())
+                && Objects.equals(getEndereco(), pessoa.getEndereco())
+                && Objects.equals(getTelefone(), pessoa.getTelefone()) && Objects.equals(getEmail(), pessoa.getEmail())
+                && Objects.equals(getSenha(), pessoa.getSenha()) && Objects.equals(getHash(), pessoa.getHash());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getNome(), getDataNascimento(), getGenero(), getCpf(), getEndereco(), getTelefone(), getEmail(), getSenha(), getHash());
+        return Objects.hash(getNome(), getDataNascimento(), getGenero(), getCpf(), getEndereco(), getTelefone(),
+                getEmail(), getSenha(), getHash());
     }
 
     public void setNome(String nome) {
