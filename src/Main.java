@@ -77,6 +77,14 @@ public class Main {
 
         menu.adicionarOpcao(listarPessoas, "Listar pessoas.");
 
+        menu.adicionarOpcao(() -> {
+            Funcionario func = new Funcionario(120, null, null, 0, null);
+
+            usuarios.add(func);
+
+            return null;
+        }, "DEBUG : ADICIONAR USUARIOS DE TESTE.");
+
         menu.exibir();
 
         teclado.close();
