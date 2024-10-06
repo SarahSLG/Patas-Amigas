@@ -83,7 +83,7 @@ public class FormularioCriarObjeto {
         boolean entradaUsuarioForNumero = tentarObterNumeroDeValor != null;
 
         if (entradaUsuarioForNumero) {
-            return novoValor;
+            return tentarObterNumeroDeValor;
         }
 
         // Verifica se o valor de entrada é uma data, e se esse valor pode ser
@@ -94,7 +94,7 @@ public class FormularioCriarObjeto {
         // Verifica se o valor de entrada é um S ou N, e se o atributo é booleano e
         // assinala true para S, e false para N
         if (entradaUsuario != null) {
-            return tentarObterBooleanDeValor(entradaUsuario);
+            entradaUsuario = tentarObterBooleanDeValor(entradaUsuario);
         }
 
         return novoValor;
