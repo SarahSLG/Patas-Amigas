@@ -50,24 +50,27 @@ public class FormularioCriarObjeto {
 
                 boolean respostaVazia = valor.equals("");
 
-                // Uma resposta vazia indica um valor nulo, do contrário ele faz um 'casting'
-                // para que o tipo do atributo seja o mesmo do valor de entrada
+                // Uma resposta vazia indica um valor nulo
                 if (respostaVazia) {
                     valor = null;
                 }
 
+                // Verifica se o valor de entrada é um número, e se esse valor pode ser
+                // assinalado ao atributo do objeto (se possuem o mesmo tipo), e daí assinala
+                // esse valor como um número
                 if (tentarObterNumeroDeValor(f.getType(), valor) != null) {
                     valor = tentarObterNumeroDeValor(f.getType(), valor);
                 }
 
+                // Verifica se o valor de entrada é uma data, e se esse valor pode ser
+                // assinalado para o atributo do objeto (se possuem o mesmo tipo), e daí
+                // assinala esse valor como uma data
                 valor = tentarObterDataDeValor(valor);
 
+                // Verifica se o valor de entrada é um S ou N, e se o atributo é booleano e
+                // assinala true para S, e false para N
                 if (valor != null) {
-                    if (valor.equals("S")) {
-                        valor = true;
-                    } else if (valor.equals("N")) {
-                        valor = false;
-                    }
+                    valor = tentarObterBooleanDeValor(valor);
                 }
 
                 try {
@@ -83,6 +86,17 @@ public class FormularioCriarObjeto {
         }
 
         return obj;
+    }
+
+    private static Boolean tentarObterBooleanDeValor(Object valor) {
+        Boolean novoValor = null;
+
+        if (valor.equals("S")) {
+            novoValor = true;
+        } else if (valor.equals("N")) {
+            novoValor = false;
+        }
+        return novoValor;
     }
 
     /**
