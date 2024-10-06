@@ -46,7 +46,9 @@ public class FormularioCriarObjeto {
                     valor = null;
                 }
 
-                valor = tentarObterNumeroDeValor(classe, valor);
+                if (tentarObterNumeroDeValor(f.getType(), valor) != null) {
+                    valor = tentarObterNumeroDeValor(f.getType(), valor);
+                }
 
                 valor = tentarObterDataDeValor(valor);
 
@@ -100,16 +102,20 @@ public class FormularioCriarObjeto {
      * @param valor  O valor
      * @return O valor de tipo número, se o valor assinalado a ele for um número
      */
-    private static <T> Object tentarObterNumeroDeValor(Class<T> classe, Object valor) {
+    private static <T> Integer tentarObterNumeroDeValor(Class<T> classe, Object valor) {
+        Integer novoNumero = null;
+
         try {
-            boolean classeInstanciaDeNumero = Number.class.isAssignableFrom(classe);
+            boolean atributoInstanciaDeNumero = Number.class.isAssignableFrom(classe);
+            System.out.println(classe);
             boolean valorValido = valor != null && !valor.equals("");
 
-            if (valorValido && classeInstanciaDeNumero) {
-                valor = Integer.parseInt((String) valor);
+            if (valorValido && atributoInstanciaDeNumero) {
+                novoNumero = Integer.parseInt((String) valor);
             }
         } catch (NumberFormatException ignorar) {
         }
-        return valor;
+
+        return novoNumero;
     }
 }
