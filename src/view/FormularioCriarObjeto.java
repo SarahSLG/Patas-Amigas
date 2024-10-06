@@ -107,7 +107,6 @@ public class FormularioCriarObjeto {
 
         try {
             boolean atributoInstanciaDeNumero = Number.class.isAssignableFrom(classe);
-            System.out.println(classe);
             boolean valorValido = valor != null && !valor.equals("");
 
             if (valorValido && atributoInstanciaDeNumero) {
