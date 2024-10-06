@@ -78,10 +78,12 @@ public class FormularioCriarObjeto {
         // Verifica se o valor de entrada é um número, e se esse valor pode ser
         // assinalado ao atributo do objeto (se possuem o mesmo tipo), e daí assinala
         // esse valor como um número
-        boolean entradaUsuarioForNumero = tentarObterNumeroDeValor(f.getType(), entradaUsuario) != null;
+        Integer tentarObterNumeroDeValor = tentarObterNumeroDeValor(f.getType(), entradaUsuario);
+
+        boolean entradaUsuarioForNumero = tentarObterNumeroDeValor != null;
 
         if (entradaUsuarioForNumero) {
-            entradaUsuario = tentarObterNumeroDeValor(f.getType(), entradaUsuario);
+            return novoValor;
         }
 
         // Verifica se o valor de entrada é uma data, e se esse valor pode ser
@@ -92,7 +94,7 @@ public class FormularioCriarObjeto {
         // Verifica se o valor de entrada é um S ou N, e se o atributo é booleano e
         // assinala true para S, e false para N
         if (entradaUsuario != null) {
-            entradaUsuario = tentarObterBooleanDeValor(entradaUsuario);
+            return tentarObterBooleanDeValor(entradaUsuario);
         }
 
         return novoValor;
