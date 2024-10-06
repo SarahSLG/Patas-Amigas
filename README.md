@@ -15,15 +15,15 @@ O projeto é feito com Java 19 e executado totalmente em terminal. Será integra
 | Nome             | Função         |
 | ---------------- | -------------- |
 | Fernando Freitas | Classes Útil   |
-| Francine Midori  | -              |
+| Francine Midori  | Documentação   |
 | Sarah Sabongi    | Classes Modelo |
 | Elisa Santos     | -              |
 
 ## Tragetória
 
-- [ ] Configuração inicial do sistema no terminal
-- [ ] Criação de menus no terminal para cadastro de PESSOAS (tutores, adotantes e funcionários)
-- [ ] Geração de relatórios simples no terminal (ex: listagem de usuários cadastrados)
+- [x] Configuração inicial do sistema no terminal
+- [x] Criação de menus no terminal para cadastro de PESSOAS (tutores, adotantes e funcionários)
+- [x] Geração de relatórios simples no terminal (ex: listagem de usuários cadastrados)
 - [ ] Adição de novos itens (animais, pessoas) através de menus no terminal.
 - [ ] Listagem de itens em formato de tabela no terminal.
 - [ ] Edição de informações de itens diretamente via linha de comando.
@@ -31,6 +31,5 @@ O projeto é feito com Java 19 e executado totalmente em terminal. Será integra
 - [ ] Implementação de autenticação (login/logout) com criptografia de senha no terminal.
 - [ ] Opção para editar perfil via menus textuais.
 - [ ] Implementação de soft delete para desativação de usuários.
-- [ ] Implementação de filtros mais detalhados para listar animais por características (espécie, idade,
-status de adoção).
+- [ ] Implementação de filtros mais detalhados para listar animais por características (espécie, idade, status de adoção).
 - [ ] Documentação explicando a interação com o sistema via terminal, casos de uso e detalhes técnicos.
