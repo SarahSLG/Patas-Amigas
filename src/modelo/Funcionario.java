@@ -7,7 +7,7 @@ import java.util.Date;
  * @author Sarah Guimarães
  */
 public class Funcionario extends Pessoa {
-    private int idFuncionario;
+    private Integer idFuncionario;
     private Date contratacao;
     private String cargo;
     private float salario;

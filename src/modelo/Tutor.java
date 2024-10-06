@@ -6,7 +6,7 @@ import java.time.LocalDate;
  * @author Sarah Guimarães
  */
 public class Tutor extends Pessoa {
-    private int idTutor;
+    private Integer idTutor;
     private int animaisCustodia;
     private String historico;
     private String status;

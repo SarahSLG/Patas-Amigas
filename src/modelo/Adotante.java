@@ -6,7 +6,7 @@ import java.time.LocalDate;
  * @author Sarah Guimarães
  */
 public class Adotante extends Pessoa {
-    private int idAdotante;
+    private Integer idAdotante;
     private String preferencia;
     private String historicoAdocoes;
     private String status;
