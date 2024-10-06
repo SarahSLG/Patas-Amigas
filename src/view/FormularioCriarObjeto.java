@@ -34,8 +34,18 @@ public class FormularioCriarObjeto {
                 // Obtém o nome do atributo
                 String nomeAtributo = f.getName();
 
+                // No caso de for umm atributo diferenciado, ele irá exibir uma informação
+                // adicional de como deve ser preenchido
+                String informacaoAdicional = "";
+
+                if (f.getType().equals(LocalDate.class)) {
+                    informacaoAdicional = "(Formato: \"dia/mês/ano\")";
+                } else if (f.getType().equals(Boolean.class)) {
+                    informacaoAdicional = "(Formato: S ou N)";
+                }
+
                 // Faz a pergunta do formulário
-                System.out.println("Digite o valor para " + nomeAtributo);
+                System.out.println("Digite o valor para " + nomeAtributo + " " + informacaoAdicional);
                 Object valor = scanner.nextLine();
 
                 boolean respostaVazia = valor.equals("");
@@ -51,6 +61,14 @@ public class FormularioCriarObjeto {
                 }
 
                 valor = tentarObterDataDeValor(valor);
+
+                if (valor != null) {
+                    if (valor.equals("S")) {
+                        valor = true;
+                    } else if (valor.equals("N")) {
+                        valor = false;
+                    }
+                }
 
                 try {
                     // Define o valor do atributo do objeto
