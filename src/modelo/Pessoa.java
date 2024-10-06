@@ -17,9 +17,9 @@ public abstract class Pessoa {
     private String senha;
     private String hash;
 
-    private boolean podeAdotar;
-    private boolean podeDoar;
-    private boolean funcionario;
+    private Boolean podeAdotar;
+    private Boolean podeDoar;
+    private Boolean funcionario;
 
     public Pessoa() {
     }
@@ -49,7 +49,7 @@ public abstract class Pessoa {
     }
 
     /**
-     * Cada subclasse de {@code Pessoa} deve conter um id próprio do objeto.
+     * Cada subclasse de {@code Pessoa} deve conter um id próprio do objetoBoolean.
      * 
      * @return O id correspondente do usuário
      */
@@ -154,27 +154,27 @@ public abstract class Pessoa {
         return hash;
     }
 
-    public void setPodeAdotar(boolean podeAdotar) {
+    public void setPodeAdotar(Boolean podeAdotar) {
         this.podeAdotar = podeAdotar;
     }
 
-    public boolean podeAdotar() {
+    public Boolean podeAdotar() {
         return podeAdotar;
     }
 
-    public boolean podeDoar() {
+    public Boolean podeDoar() {
         return podeDoar;
     }
 
-    public void setPodeDoar(boolean podeDoar) {
+    public void setPodeDoar(Boolean podeDoar) {
         this.podeDoar = podeDoar;
     }
 
-    public boolean isFuncionario() {
+    public Boolean isFuncionario() {
         return funcionario;
     }
 
-    public void setFuncionario(boolean funcionario) {
+    public void setFuncionario(Boolean funcionario) {
         this.funcionario = funcionario;
     }
 }
