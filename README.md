@@ -2,6 +2,8 @@
 
 > Prof. Luiz Fernando Postingel Quirino
 
+![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white)
+
 ## Objetivo
 
 Desenvolver uma aplicação web robusta e eficiente, chamada "PatasAmigas", que automatize e facilite o processo de adoção de animais, permitindo o cadastro de usuários (tutores e adotantes), animais disponíveis para adoção e o acompanhamento das adoções. A plataforma precisa ser intuitiva e fácil de usar, garantindo que os amantes dos animais possam navegar, adotar e acompanhar os animais sem complicações.
