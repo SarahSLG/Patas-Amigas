@@ -19,10 +19,14 @@ public class ReflectionUtils {
      * @return A lista de todos os atributos juntos
      */
     public static <T> List<Field> getAllFields(Class<T> cls) {
-        List<Field> fieldsClass = Arrays.asList(cls.getDeclaredFields());
-        List<Field> fieldsSuperClass = Arrays.asList(cls.getSuperclass().getDeclaredFields());
+        if (cls == null) {
+            return new ArrayList<>();
+        }
 
         List<Field> joinedFields = new ArrayList<>();
+
+        List<Field> fieldsClass = Arrays.asList(cls.getDeclaredFields());
+        List<Field> fieldsSuperClass = getAllFields(cls.getSuperclass());
 
         joinedFields.addAll(fieldsSuperClass);
         joinedFields.addAll(fieldsClass);
